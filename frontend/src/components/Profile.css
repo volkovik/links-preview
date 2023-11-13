@@ -1,0 +1,45 @@
+.Profile {
+    background-color: #37353B;
+    border-radius: 20px;
+    color: white;
+
+    padding: 50px;
+    margin: 30px;
+    width: fit-content;
+
+    text-align: center;
+
+    & p {
+        margin: 0;
+        padding: 0;
+    }
+
+    & .Profile__username {
+        font-weight: 800;
+        font-size: 38px;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    & .Profile__fullname {
+        color: #B4B4B4;
+        font-weight: 600;
+    }
+
+    & .Profile__avatar {
+        border-radius: 50%;
+    }
+
+    & .Profile__bio {
+        font-weight: 400;
+        color: #B4B4B4;
+
+        max-width: 300px;
+    }
+
+    & .Profile__space-delimiter {
+        border: none;
+        padding: 8px;
+    }
+}
