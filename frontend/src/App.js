@@ -1,22 +1,31 @@
 import './App.css';
-import Profile from "./components/Profile";
-import Link from "./components/Link";
+import {Link, Route, Routes} from "react-router-dom";
+import Profile from "./components/CardProfile";
+import Home from "./pages/Home";
+import EditProfile from "./pages/EditProfile";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-    <div className="App">
-      <Profile
-          username="volkovik"
-          fullname="Daniil Siurmachenko"
-          avatarUrl="https://cdn.discordapp.com/avatars/279632382582325248/a5c6840c61a25052d6ffe80b2d345b61.webp"
-          bio="Full-stack developer. Use Django and React.js for creating web applications. Feel free to contact me!"
-      >
-          <Link
-              iconUrl='https://cdn-icons-png.flaticon.com/512/733/733579.png'
-              name='Twitter'
-              link='https://twitter.com/volkovik_'
-          />
-      </Profile>
+    <div className='App'>
+      <nav className='Navigation'>
+        <h1 className='Navigation__logo'><Link to='/'>Showcase</Link></h1>
+        <ul className='Navigation__items'>
+          <li><Link to='/login'>Login</Link></li>
+        </ul>
+      </nav>
+      <div className="Content">
+        <Routes className='Content'>
+          <Route index element={<Home />} />
+          <Route path=':username' element={<Profile />} />
+          <Route path='profile' element={<EditProfile />} />
+          <Route path='login' element={<Login />} />
+          <Route path='signup' element={<Signup />} />
+          <Route path='*' element={<NoPage />} />
+        </Routes>
+      </div>
     </div>
   );
 }

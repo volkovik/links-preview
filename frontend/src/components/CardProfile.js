@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.css';
+import './CardProfile.css';
 
 function Profile({children, ...props}) {
     return (
